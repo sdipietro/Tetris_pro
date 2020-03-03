@@ -1,5 +1,5 @@
 # Tetris Pro
-A web browser teatris game with a larger board and harder pieces.
+Tetris Pro is a twist on the timeless 1980s, tile-matching puzzle video game. It is a web browser version with a larger board and different pieces.
 
 ## Controls
 * Use up, down, left, and right arrows to move and rotate each piece as it moves down.
