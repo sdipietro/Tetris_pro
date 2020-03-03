@@ -9,3 +9,10 @@ Tetris Pro is a twist on the timeless 1980s, tile-matching puzzle video game. It
 
 ## Techonologies
 * To build Tetris Pro, I will be using vanilla Javascript and the the HTML5 Canvas API.
+
+## Implementation Timeline
+* (03/02/20) - Initial setup, README, github hosting
+* (03/03/20) - Create canvas grid and controling piece
+* (03/04/20) - Initial styling/background
+* (03/05/20) - Styling/background
+* (03/06/20) - Add sound and effects
