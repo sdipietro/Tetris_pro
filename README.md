@@ -16,3 +16,10 @@ Tetris Pro is a twist on the timeless 1980s, tile-matching puzzle video game. It
 * (03/04/20) - Initial styling/background
 * (03/05/20) - Styling/background
 * (03/06/20) - Add sound and effects
+
+## File Structure
+* (src/
+     * - index.js
+     * styles/
+         * - index.scss
+     * scripts/ 
