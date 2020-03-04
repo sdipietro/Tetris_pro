@@ -1,0 +1,14 @@
+.outer-body {
+    display: flex;
+    justify-content: center;
+    background-image: url(/src/images/background.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}

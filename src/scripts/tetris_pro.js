@@ -1,90 +1,43 @@
-import { Z, S, T, O, L, I, J } from './pieces';
+import { open_box, plug, hook, long, box, corner } from "./pieces";
+import Piece from './piece';
 
-const canvas = document.getElementById('game');
-const context = canvas.getContext('2d');
+const piece_array = [
+  [open_box, "red"],
+  [plug, "orange"],
+  [hook, "cyan"],
+  [long, "blue"],
+  [box, "purple"],
+  [corner, "green"],
+];
 
-const ROW = 20;
-const COLUMN = 10;
-const SQUARE = 20;
-const VACANT = "WHITE";
-
-export function drawSquare(x,y,color) {
-    context.fillStyle = color;
-    context.fillRect(x * SQUARE, y * SQUARE, SQUARE, SQUARE);
-
-    context.strokeStyle = "BLACK";
-    context.strokeRect(x * SQUARE, y * SQUARE, SQUARE, SQUARE);
+export function generateRandomPiece() {
+  const random = Math.floor(Math.random() * 5);
+  return piece = new Piece(piece_array[random][0], piece_array[random][1]);
 }
 
-// drawSquare(0,0,"red");
+let piece = generateRandomPiece();
 
-let board = [];
-for (let r = 0; r < ROW; r++) {
-    board[r] = [];
-    for (let c = 0; c < COLUMN; c++) {
-        board[r][c] = VACANT;
-    }
+document.addEventListener("keydown", CONTROL);
+
+function CONTROL(event) {
+  if (event.keyCode == 37) {
+    piece.moveLeft();
+  } else if (event.keyCode === 38) {
+    piece.rotate();
+  } else if (event.keyCode === 39) {
+    piece.moveRight();
+  } else if (event.keyCode === 40) {
+    piece.moveDown();
+  }
 };
 
-function drawBoard() {
-    for (let r = 0; r < ROW; r++) {
-      for (let c = 0; c < COLUMN; c++) {
-        drawSquare(c,r,board[r][c])
-      }
-    }
+let startTime = Date.now();
+export function drop() {
+  let currentTime = Date.now();
+  let difference = currentTime - startTime;
+  if (difference > 1000) {
+    piece.moveDown();
+    startTime = Date.now();
+  }
+  requestAnimationFrame(drop);
 };
-
-drawBoard();
-
-// const PIECES = [
-//     [Z, "red"],
-//     [S, "green"],
-//     [T, "yellow"],
-//     [O, "blue"],
-//     [L, "purple"],
-//     [I, "cyan"],
-//     [J, "orange"]
-// ];
-
-// let p = new Piece(PIECES[0][0], PIECES[0][1]);
-
-// function Piece(piece, color) {
-//     this.piece = piece;
-//     this.color = color;
-
-//     this.pieceNum = 0;
-//     this.activePiece = this.piece[this.pieceNum];
-
-//     this.x = 0;
-//     this.y = 0;
-// };
-
-// Piece.prototype.draw = function() {
-//     for (r = 0; r < this.activePiece.length; r++) {
-//       for (c = 0; c < this.activePiece.length; c++) {
-//           if (this.activePiece[r][c]) {
-//               drawSquare(this.x + c, this.y + r, this.color);
-//           }
-//       }
-//     }
-// };
-
-// // p.draw();
-
-// Piece.prototype.moveDown = function() {
-//     this.y++;
-//     this.draw();
-// };
-
-// let startTime = Date.now();
-// function drop() {
-//     let currentTime = Date.now();
-//     let difference = currentTime - startTime;
-//     if (difference > 1000) {
-//         p.moveDown();
-//         startTime = Date.now();
-//     }
-//     requestAnimationFrame(drop);
-// };
-
-// drop();

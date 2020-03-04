@@ -1,5 +1,8 @@
 import './styles/index.scss';
-import './scripts/pieces';
-import './scripts/tetris_pro';
-import './scripts/piece';
+import { drawBoard } from "./scripts/board";
+import { drop } from './scripts/tetris_pro';
 
+document.addEventListener("DOMContentLoaded", () => {
+  drawBoard();
+  drop();
+});

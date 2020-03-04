@@ -1,25 +1,15 @@
-import { Z, S, T, O, L, I, J } from "./pieces";
-import { drawSquare } from './tetris_pro';
-
-const PIECES = [
-  [Z, "red"],
-  [S, "green"],
-  [T, "yellow"],
-  [O, "blue"],
-  [L, "purple"],
-  [I, "cyan"],
-  [J, "orange"]
-];
+import { drawSquare, board } from './board';
+import { generateRandomPiece } from './tetris_pro';
 
 class Piece {
   constructor(piece, color) {
     this.piece = piece;
     this.color = color;
     this.pieceNum = 0;
-    this.activePiece = this.piece[this.pieceNum];
-
+    this.currentPiece = this.piece[this.pieceNum];
     this.x = 0;
     this.y = 0;
+    this.board = board;
   };
 
   placePiece() {
@@ -31,68 +21,74 @@ class Piece {
   };
 
   input(color) {
-    for (let r = 0; r < this.activePiece.length; r++) {
-      for (let c = 0; c < this.activePiece.length; c++) {
-        if (this.activePiece[r][c]) {
-          drawSquare(this.x + c, this.y + r, color);
+    for (let i = 0; i < this.currentPiece.length; i++) {
+      for (let j = 0; j < this.currentPiece.length; j++) {
+        if (this.currentPiece[i][j]) {
+          drawSquare(this.x + i, this.y + j, color);
         }
       }
     }
   };
 
-
-
   moveDown() {
-    this.removePiece();
-    this.y++;
-    this.placePiece();
+    if (!this.collision(0, 1, this.currentPiece)) {
+        // move piece down 1 spot
+        this.removePiece();
+        this.y++;
+        this.placePiece();
+    } else {
+        this.piece = generateRandomPiece();
+    }
   }
 
   moveRight() {
-    this.removePiece();
-    this.x++;
-    this.placePiece();
+      if (!this.collision(1, 0, this.currentPiece)) {
+        this.removePiece();
+        this.x++;
+        this.placePiece();
+      }
   }
 
   moveLeft() {
-    this.removePiece();
-    this.x--;
-    this.placePiece();
+      if (!this.collision(-1, 0, this.currentPiece)) {
+        this.removePiece();
+        this.x--;
+        this.placePiece();
+      }
   }
 
   rotate() {
-    this.removePiece();
-    this.pieceNum = (this.pieceNum + 1) % this.piece.length;
-    this.activePiece = this.piece[this.pieceNum];
-    this.placePiece();
+      let next = this.piece[(this.pieceNum + 1) % this.piece.length];
+      if (!this.collision(0, 0, next)) {
+        this.removePiece();
+        this.pieceNum = (this.pieceNum + 1) % this.piece.length;
+        this.currentPiece = this.piece[this.pieceNum];
+        this.placePiece();
+      }
   };
-}
 
-let p = new Piece(PIECES[0][0], PIECES[0][1]);
+  collision(x, y, piece) {
+      for (let i = 0; i < piece.length; i++) {
+        for (let j = 0; j < piece.length; j++) {
+          if (!piece[i][j] || (this.y + i + y < 0)) {
+            continue;
+          }
+          if (
+            (this.x + j + x) < 0 ||
+            (this.x + j + x) >= 20 ||
+            (this.y + i + y) >= 24
+          ) {
+            return true;
+          }
+          if (this.board[(this.y + i + y)][(this.x + j + x)] != "white") {
+            return true;
+          }
+        }
+      }
+      return false;
+  };
 
-document.addEventListener("keydown", CONTROL);
-
-function CONTROL(event) {
-    if (event.keyCode == 37) {
-        p.moveLeft();
-    } else if (event.keyCode === 38) {
-        p.rotate();
-    } else if (event.keyCode === 39) {
-        p.moveRight();
-    } else if (event.keyCode === 40) {
-       p.moveDown();
-    }
+  
 };
 
-let startTime = Date.now();
-function drop() {
-  let currentTime = Date.now();
-  let difference = currentTime - startTime;
-  if (difference > 1000) {
-    p.moveDown();
-    startTime = Date.now();
-  }
-  requestAnimationFrame(drop);
-};
-
-drop();
+export default Piece;

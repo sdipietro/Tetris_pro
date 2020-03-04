@@ -10,8 +10,44 @@
 </head>
 
 <body>
-    <canvas width="200" height="400" id="game"></canvas>
-    <script src="./dist/main.js"></script>
-</body>
+    <section class="outer-body">
+        <div class="header">
+            <h1 class="nav-headline">Tetris Pro</h1>
+            <h1 class="nav-headline">by</h1>
+            <h1 class="nav-headline">Steve DiPietro</h1>
+            <!-- <nav class="professional-links">
+                <a href="#"><img class="professional-link" src="./src/images/professional_logos/angellist.png" /></a>
+                <a href="https://github.com/al6/space-blasters"><img class="professional-link"
+                    src="./src/images/professional_logos/github-logo.png" /></a>
+                    <a href="#"><img class="professional-link" src="./src/images/professional_logos/linkedin.svg" /></a>
+                </nav> -->
+        </div>
 
+        <div class="canvas-container">
+            <canvas width="500" height="600" id="game"></canvas>
+        </div>
+
+        <div class="hi-scores">
+            <h1>HIGH SCORES</h1>
+            <ul>
+                <li>1. Me</li>
+                <li>2. Me</li>
+                <li>3. Me</li>
+            </ul>
+        </div>
+
+        <div class="controls">
+            <img class="arrow-keys"  />
+            <img class="space-key"  />
+        </div>
+        
+        <div class="sound-toggle">
+            <img class="sound"  />
+            <img class="no-sound"  />
+        </div>
+    </section>
+
+    <script src="./dist/main.js"></script>
+    </body>
+    
 </html>
