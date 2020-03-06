@@ -1,5 +1,5 @@
 .outer-body {
-    background-image: url(/src/images/colors-background.jpg);                     
+    background-image: url(https://github.com/sdipietro/Tetris_pro/blob/master/src/images/colors-background.jpg);                     
     background-repeat:   no-repeat;
     background-position: center center;
 }
@@ -42,7 +42,7 @@ body {
     height: 450px;
 }
 
-.left-container:before {
+.left-container:after {
     border: 3px solid white;
     border-radius: 20px;
     content: "";
