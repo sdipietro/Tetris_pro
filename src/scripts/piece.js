@@ -132,11 +132,10 @@ class Piece {
                 board[0][j] = "white";
             }
             // increase score
-            this.score += 100
+            this.scoreElement.innerHTML = (parseInt(this.scoreElement.innerHTML) + 100);
         }
     }
     drawBoard();
-    this.scoreElement.innerHTML = this.score;
   };
   
 };

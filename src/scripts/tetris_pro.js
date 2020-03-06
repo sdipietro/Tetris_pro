@@ -21,13 +21,17 @@ document.addEventListener("keydown", keydown_controller);
 
 function keydown_controller(event) {
   if (event.keyCode == 37) {
-    piece.moveLeft();
+        event.preventDefault();
+        piece.moveLeft();
   } else if (event.keyCode === 38) {
-    piece.rotate();
+        event.preventDefault();
+        piece.rotate();
   } else if (event.keyCode === 39) {
-    piece.moveRight();
+        event.preventDefault();
+        piece.moveRight();
   } else if (event.keyCode === 40) {
-    piece.moveDown();
+        event.preventDefault();
+        piece.moveDown();
   }
 };
 
@@ -35,10 +39,11 @@ let startTime = Date.now();
 export function drop() {
   let currentTime = Date.now();
   let timeAccrued = currentTime - startTime;
-  if (timeAccrued > 1000) {
+  if (timeAccrued > 600) {
     piece.moveDown();
     startTime = Date.now();
   }
+//   debugger
   if (piece.gameOver === false) {
     requestAnimationFrame(drop);
   }

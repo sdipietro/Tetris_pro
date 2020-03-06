@@ -23,7 +23,6 @@ body {
     font-style: italic;
     color: white;
     text-shadow: 3px 3px black;
-    padding-bottom: 5px;
 }
 
 .left-container {
@@ -53,6 +52,11 @@ body {
     left: 2px;
     right: 2px;
     bottom: 2px;
+}
+
+.contact-link {
+    height: 30px;
+    width: 30px;
 }
 
 .right-container {
