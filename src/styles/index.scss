@@ -1,5 +1,5 @@
 .outer-body {
-    background-image: url(/src/images/colors-background.jpg);                     
+    background-image: url(./src/images/colors-background.jpg);                     
     background-repeat:   no-repeat;
     background-position: center center;
 }
@@ -26,7 +26,7 @@ body {
 }
 
 .left-container {
-    background-image: url(/src/images/wave-gif.gif);                     
+    background-image: url(./src/images/wave-gif.gif);                     
     background-repeat:   no-repeat;
     background-position: center center;
     background-size: cover;
@@ -59,8 +59,12 @@ body {
     width: 30px;
 }
 
+.contact-image-container {
+    z-index: 5;
+}
+
 .right-container {
-    background-image: url(/src/images/wave-gif.gif);                     
+    background-image: url(./src/images/wave-gif.gif);                     
     background-repeat:   no-repeat;
     background-position: center center;
     background-size: cover;
