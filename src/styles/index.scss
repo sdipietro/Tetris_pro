@@ -1,5 +1,5 @@
 .outer-body {
-    background-image: url(https://github.com/sdipietro/Tetris_pro/blob/master/src/images/colors-background.jpg?raw=true);                     
+    background-image: url('/src/images/colors-background.jpg');                     
     background-repeat:   no-repeat;
     background-position: center center;
 }
@@ -26,7 +26,7 @@ body {
 }
 
 .left-container {
-    background-image: url(https://github.com/sdipietro/Tetris_pro/blob/master/src/images/wave-gif.gif?raw=true);                     
+    background-image: url('/src/images/wave-gif.gif');                     
     background-repeat:   no-repeat;
     background-position: center center;
     background-size: cover;
@@ -64,7 +64,7 @@ body {
 }
 
 .right-container {
-    background-image: url(https://github.com/sdipietro/Tetris_pro/blob/master/src/images/wave-gif.gif?raw=true);                     
+    background-image: url('/src/images/wave-gif.gif');                     
     background-repeat:   no-repeat;
     background-position: center center;
     background-size: cover;
