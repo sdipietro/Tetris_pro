@@ -1,13 +1,13 @@
-import { open_box, plug, hook, long, box, corner } from "./pieces";
+import { I, J, L, O, S, Z } from "./pieces";
 import Piece from './piece';
 
 const piece_array = [
-  [open_box, "red"],
-  [plug, "orange"],
-  [hook, "cyan"],
-  [long, "blue"],
-  [box, "purple"],
-  [corner, "green"],
+  [I, "red"],
+  [J, "orange"],
+  [L, "cyan"],
+  [O, "blue"],
+  [S, "purple"],
+  [Z, "green"],
 ];
 
 export function generateRandomPiece() {
@@ -17,9 +17,9 @@ export function generateRandomPiece() {
 
 let piece = generateRandomPiece();
 
-document.addEventListener("keydown", CONTROL);
+document.addEventListener("keydown", keydown_controller);
 
-function CONTROL(event) {
+function keydown_controller(event) {
   if (event.keyCode == 37) {
     piece.moveLeft();
   } else if (event.keyCode === 38) {
@@ -34,10 +34,12 @@ function CONTROL(event) {
 let startTime = Date.now();
 export function drop() {
   let currentTime = Date.now();
-  let difference = currentTime - startTime;
-  if (difference > 1000) {
+  let timeAccrued = currentTime - startTime;
+  if (timeAccrued > 1000) {
     piece.moveDown();
     startTime = Date.now();
   }
-  requestAnimationFrame(drop);
+  if (piece.gameOver === false) {
+    requestAnimationFrame(drop);
+  }
 };

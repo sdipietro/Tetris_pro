@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <title>Tetris Pro</title>
 </head>
 
-<body>
-    <section class="outer-body">
-        <div class="header">
-            <h1 class="nav-headline">Tetris Pro</h1>
-            <h1 class="nav-headline">by</h1>
-            <h1 class="nav-headline">Steve DiPietro</h1>
+<body class="outer-body">
+    <h1 class="title">Tetris Pro</h1>
+    <section class="inner-body">
+        <div class="left-container">
+            <h1 class="nav-headline">Welcome to Tetris Pro!!!</h1>
+            <p class="nav-headline">by</p>
+            <h3 class="nav-headline">Steve DiPietro</h3>
             <!-- <nav class="professional-links">
                 <a href="#"><img class="professional-link" src="./src/images/professional_logos/angellist.png" /></a>
                 <a href="https://github.com/al6/space-blasters"><img class="professional-link"
@@ -24,30 +27,36 @@
         </div>
 
         <div class="canvas-container">
-            <canvas width="500" height="600" id="game"></canvas>
+            <canvas width="375" height="525" id="game"></canvas>
         </div>
 
-        <div class="hi-scores">
-            <h1>HIGH SCORES</h1>
-            <ul>
-                <li>1. Me</li>
-                <li>2. Me</li>
-                <li>3. Me</li>
-            </ul>
+        <div class="right-container">
+            <div class="hi-scores">
+                <h1 class="player-score">Your Score : <div id="score">0</div></h1>
+                <h1>HIGH SCORES</h1>
+                <ol>
+                    <li>Tetrismaster1</li>
+                    <li>player2347</li>
+                    <li>GOATTTT</li>
+                    <!-- <li>77tetris</li>
+                    <li>delta1</li> -->
+                </ol>
+            </div>
+    
+            <div class="controls">
+                <h2 class="controls-title">Controls</h2>
+                <img src="/src/images/controls.png" class="arrow-keys"  />
+            </div>
+            
+            <div class="sound-toggle">
+                <img class="sound"  />
+                <img class="no-sound"  />
+            </div>
         </div>
 
-        <div class="controls">
-            <img class="arrow-keys"  />
-            <img class="space-key"  />
-        </div>
-        
-        <div class="sound-toggle">
-            <img class="sound"  />
-            <img class="no-sound"  />
-        </div>
     </section>
 
     <script src="./dist/main.js"></script>
-    </body>
+</body>
     
 </html>
