@@ -26,10 +26,6 @@ body {
 }
 
 .left-container {
-    background-image: url(https://github.com/sdipietro/Tetris_pro/blob/master/src/images/wave-gif.gif?raw=true);                     
-    background-repeat:   no-repeat;
-    background-position: center center;
-    background-size: cover;
     border: 3px solid white;
     border-radius: 25px;
     padding: 2em;
@@ -42,7 +38,11 @@ body {
     height: 450px;
 }
 
-.left-container:after {
+.left-container:before {
+    background-image: url(https://github.com/sdipietro/Tetris_pro/blob/master/src/images/wave-gif.gif?raw=true);                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-size: cover;
     border: 3px solid white;
     border-radius: 20px;
     content: "";
@@ -52,6 +52,7 @@ body {
     left: 2px;
     right: 2px;
     bottom: 2px;
+    z-index: -1;
 }
 
 .contact-link {
@@ -64,10 +65,6 @@ body {
 }
 
 .right-container {
-    background-image: url(https://github.com/sdipietro/Tetris_pro/blob/master/src/images/wave-gif.gif?raw=true);                     
-    background-repeat:   no-repeat;
-    background-position: center center;
-    background-size: cover;
     border: 3px solid white;
     border-radius: 25px;
     padding: 2em;
@@ -81,6 +78,10 @@ body {
 }
 
 .right-container:before {
+    background-image: url(https://github.com/sdipietro/Tetris_pro/blob/master/src/images/wave-gif.gif?raw=true);                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-size: cover;
     border: 3px solid white;
     border-radius: 20px;
     content: "";
@@ -90,6 +91,7 @@ body {
     left: 2px;
     right: 2px;
     bottom: 2px;
+    z-index: -1;
 }
 
 .controls-title {

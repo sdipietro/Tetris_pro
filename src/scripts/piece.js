@@ -109,6 +109,7 @@ class Piece {
             alert("GAME OVER");
             this.gameOver = true;
             // drawGameOver();
+            // debugger
             break;
         }
         board[this.y + i][this.x + j] = this.color

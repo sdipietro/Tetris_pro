@@ -43,7 +43,7 @@ export function drop() {
     piece.moveDown();
     startTime = Date.now();
   }
-//   debugger
+  // debugger
   if (piece.gameOver === false) {
     requestAnimationFrame(drop);
   }
