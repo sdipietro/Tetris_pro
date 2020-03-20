@@ -15,7 +15,7 @@ Tetris Pro is a twist on the timeless 1980s, tile-matching puzzle video game. It
 * (03/03/20) - Create canvas grid and controling piece
 * (03/04/20) - Initial styling/background
 * (03/05/20) - Styling/background
-* (03/06/20) - Add sound and effects
+* (03/06/20) - Add sound and effects (bonus)
 
 ## File Structure
 * dist/
