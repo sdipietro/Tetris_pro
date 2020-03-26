@@ -20,6 +20,7 @@ Tetris Pro is a twist on the timeless 1980s, tile-matching puzzle video game. It
 ## File Structure
 * dist/
   * main.js
+  
 * src/
   * styles/
     * index.scss
@@ -27,10 +28,12 @@ Tetris Pro is a twist on the timeless 1980s, tile-matching puzzle video game. It
     * piece.scss
     * pieces.scss
     * tetris_pro.scss
+    
   * scripts/
     * board.js
     * piece.js
     * pieces.js
     * tetris_pro.js
   * index.js
+  
  * index.html
